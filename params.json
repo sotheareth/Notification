@@ -1,0 +1,6 @@
+{
+  "name": "Notification",
+  "tagline": "Test Notification",
+  "body": "<h1>Hello World</h1>",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
