@@ -4,8 +4,8 @@
 	"short_name": "Push Demo",
 	"icons": [
 		{
-		src: "images/icon-192x192.png",
-		sizes: "192x192"
+		"src": "images/icon-192x192.png",
+		"sizes": "192x192"
 		}
 	],
 	"start_url": "/",
