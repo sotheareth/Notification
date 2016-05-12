@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Draggable - Default functionality</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    $("#test").on("click", function(e){
+      var data = {
+        "registration_ids" : ["f_aiWNtuthU:APA91bFLxNs-p4yWTcFlL7XLLr2Rkut5G2TGIuPDmGKg0icV_Sr7XmxZm3KwEX2UpK7Ohfq2MVWmHrVHF6lEvw0BamkZ3NUIvg9H0q9ctovdvZrhuyoxAKFFsDJbDDAygNr1g3XN2oBE"],
+        "data" : {"title" : "Hello World"}
+      };
+    
+      $.ajax({
+        "url" : "https://android.googleapis.com/gcm/send",
+        "method" : "post",
+        "data" : data,
+        "success" : function(result){
+          console.log(result);
+        }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+ 
+<div>
+  <button id="test">Test Push</button>
+</div>
+ 
+ 
+</body>
+</html>
