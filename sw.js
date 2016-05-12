@@ -13,6 +13,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('push', function(event) {
+  console.log(arguments);
   console.log('Push message', event);
 
   var title = 'Push message';
@@ -25,6 +26,7 @@ self.addEventListener('push', function(event) {
 });
 
 self.addEventListener('notificationclick', function(event) {
+  console.log(arguments);
   console.log('Notification click: tag', event.notification.tag);
   // Android doesn't close the notification when you click it
   // See http://crbug.com/463146
