@@ -17,6 +17,7 @@
       $.ajax({
         "url" : "https://android.googleapis.com/gcm/send",
         "method" : "post",
+        "dataType" : "application/json",
         "data" : data,
         "success" : function(result){
           console.log(result);
