@@ -12,6 +12,7 @@
 	"display": "standalone",
 	"permissions" : [
 		"pushMessaging",
-		"notifications"
+		"notifications",
+		"gcm"
 	]
 }
