@@ -8,11 +8,6 @@ self.addEventListener('install', function(event) {
   console.log('Installed', event);
 });
 
-self.addEventListener('message', function(event) {
-  console.log("onMessage", event);
-
-});
-
 self.addEventListener('activate', function(event) {
   console.log('Activated', event);
 });
