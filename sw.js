@@ -13,37 +13,14 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('push', function(event) {
-  console.log("push event:", event);
-  event.waitUntil(  
-    fetch(url).then(function(response) {  
-      if (response.status !== 200) {  
-        // Either show a message to the user explaining the error  
-        // or enter a generic message and handle the
-        // onnotificationclick event to direct the user to a web page  
-        console.log('Looks like there was a problem. Status Code: ' + response.status);  
-        throw new Error();  
-      }
- 
-      // Examine the text in the response  
-      return response.json().then(function(data) {  
-        if (data.error || !data.notification) {  
-          console.log('The API returned an error.', data.error);  
-          throw new Error();  
-        }  
-        var title = data.notification.title;  
-        var message = data.notification.message;  
-        var icon = data.notification.icon;  
- 
-        return self.registration.showNotification(title, {  
-          body: message,  
-          icon: icon,  
-          data: {
-            url: data.notification.url
-          }  
-        });  
-      });  
-    }).catch(function(err) {  
-      console.log('Unable to retrieve data', err);
+  console.log('Push message', event);
+
+  var title = 'Push message';
+
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      'body': 'The Message',
+      'icon': 'images/icon.png'
     }));
 });
 
