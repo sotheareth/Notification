@@ -13,6 +13,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('push', function(event) {
+  console.log("push event:", event);
   event.waitUntil(  
     fetch(url).then(function(response) {  
       if (response.status !== 200) {  
