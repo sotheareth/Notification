@@ -12,6 +12,10 @@ self.addEventListener('activate', function(event) {
   console.log('Activated', event);
 });
 
+chrome.gcm.onMessage.addListener(function callback){
+  console.log(arguments);
+});
+
 self.addEventListener('push', function(event) {
   console.log('Push message', event);
 
