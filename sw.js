@@ -8,7 +8,7 @@ self.addEventListener('install', function(event) {
   console.log('Installed', event);
 });
 
-self.onmessage.addEventListener('message', function(event) {
+self.addEventListener('message', function(event) {
   console.log("onMessage", event);
   self.token = event.data.token;
 });
