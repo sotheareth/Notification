@@ -45,7 +45,7 @@ self.addEventListener('push', function(event) {
       });  
     }).catch(function(err) {  
       console.log('Unable to retrieve data', err);
-    });
+    }));
 });
 
 self.addEventListener('notificationclick', function(event) {
