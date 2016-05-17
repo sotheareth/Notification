@@ -10,7 +10,7 @@ self.addEventListener('install', function(event) {
 
 self.addEventListener('message', function(event) {
   console.log("onMessage", event);
-  self.token = event.data.token;
+
 });
 
 self.addEventListener('activate', function(event) {
