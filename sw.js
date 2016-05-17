@@ -8,12 +8,13 @@ self.addEventListener('install', function(event) {
   console.log('Installed', event);
 });
 
-self.addEventListener('activate', function(event) {
-  console.log('Activated', event);
+self.onmessage.addEventListener('message', function(event) {
+  console.log("onMessage", event);
+  self.token = event.data.token;
 });
 
-chrome.gcm.onMessage.addListener(function callback){
-  console.log(arguments);
+self.addEventListener('activate', function(event) {
+  console.log('Activated', event);
 });
 
 self.addEventListener('push', function(event) {
