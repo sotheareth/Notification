@@ -34,7 +34,7 @@ self.addEventListener('push', function(event) {
       var myInit = { method: 'GET',
                headers: myHeaders,
                mode: 'cors'};
-      return fetch('http://192.168.1.143:9000/AppServerPushSpring/user/getPayload', myInit);
+      return fetch('https://192.168.1.143:8443/AppServerPushSpring/user/getPayload', myInit);
     })
     .then(function(response) {
       return response.text();
