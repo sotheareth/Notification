@@ -30,7 +30,10 @@ self.addEventListener('push', function(event) {
     getEndpoint()
     .then(function(endpoint) {
       //return fetch('response.json');
-      return fetch("http://192.168.1.143:9000/AppServerPushSpring/user/getPayload");
+      return $.ajax({
+        "url" : "http://192.168.1.143:9000/AppServerPushSpring/user/getPayload", 
+        "dataType" : "application/json"
+      });
     })
     .then(function(response) {
       return response.text();
