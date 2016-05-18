@@ -44,6 +44,7 @@ self.addEventListener('push', function(event) {
     .then(function(payload) {
       self.registration.showNotification('ServiceWorker Cookbook', {
         body: payload,
+        icon: "https://www.lifeon.com.kh/resources/css/common/images/logo_lifeon.png"
       });
     }).catch(function(e){
       console.log("error:", e);
