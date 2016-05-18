@@ -29,12 +29,14 @@ self.addEventListener('push', function(event) {
   event.waitUntil(
     getEndpoint()
     .then(function(endpoint) {
+      console.log(endpoint);
+      var subscriptionId = endpoint.substring(endpoint.lastIndexOf("/")+1);
       var myHeaders = new Headers();
 
       var myInit = { method: 'GET',
                headers: myHeaders,
                mode: 'cors'};
-      return fetch('https://www.lifeon.com.kh/api/applications', myInit);
+      return fetch('https://www.lifeon.com.kh/api/applications?subscriptionId=' + subscriptionId, myInit);
     })
     .then(function(response) {
       return response.text();
