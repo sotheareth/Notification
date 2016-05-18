@@ -29,7 +29,7 @@ self.addEventListener('push', function(event) {
   event.waitUntil(
     getEndpoint()
     .then(function(endpoint) {
-      return fetch('https://192.168.1.143:8443/AppServerPushSpring/user/getPayload?endpoint=' + endpoint);
+      return fetch('response.json');
     })
     .then(function(response) {
       return response.text();
