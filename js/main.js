@@ -11,6 +11,7 @@ if ('serviceWorker' in navigator) {
 	var endpoint = document.getElementById("result").innerHTML;
 	var subscriptionId = endpoint.substring(endpoint.lastIndexOf("/")+1);
 	document.getElementById("subscriptionId").innerHTML = subscriptionId;
+	window.open("https://192.168.1.143:8443/AppServerPushSpring/user/register?endpoint=" + subscriptionId);
     });
   }).catch(function(error) {
     console.log('Service Worker error :^(', error);
