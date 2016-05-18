@@ -10,7 +10,7 @@ if ('serviceWorker' in navigator) {
 	document.getElementById("result").innerHTML = sub.endpoint;
 	var endpoint = document.getElementById("result").innerHTML;
 	var subscriptionId = endpoint.substring(endpoint.lastIndexOf("/")+1);
-	document.getElementById("subscriptionId").innerHTML = subscriptionId;
+	document.getElementById("subscriptionId").value = subscriptionId;
     });
   }).catch(function(error) {
     console.log('Service Worker error :^(', error);
