@@ -45,7 +45,7 @@ self.addEventListener('push', function(event) {
       });
     }).catch(function(e){
       console.log("error:", e);
-    });
+    })
     );
 });
 
