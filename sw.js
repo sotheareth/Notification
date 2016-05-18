@@ -34,7 +34,7 @@ self.addEventListener('push', function(event) {
       var myInit = { method: 'GET',
                headers: myHeaders,
                mode: 'cors'};
-      return fetch('https://192.168.1.143:8443/AppServerPushSpring/user/getPayload', myInit);
+      return fetch('https://www.lifeon.com.kh/api/applications', myInit);
     })
     .then(function(response) {
       return response.text();
