@@ -29,7 +29,7 @@ self.addEventListener('push', function(event) {
   event.waitUntil(
     getEndpoint()
     .then(function(endpoint) {
-      return fetch('./getPayload?endpoint=' + endpoint);
+      return fetch('http://192.168.1.33:8443/user/getPayload?endpoint=' + endpoint);
     })
     .then(function(response) {
       return response.text();
