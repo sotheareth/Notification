@@ -42,7 +42,7 @@ self.addEventListener('push', function(event) {
       return response.text();
     })
     .then(function(payload) {
-      self.registration.showNotification('ServiceWorker Cookbook', {
+      return self.registration.showNotification('ServiceWorker Cookbook', {
         body: payload,
         icon: "https://www.lifeon.com.kh/resources/css/common/images/logo_lifeon.png"
       });
