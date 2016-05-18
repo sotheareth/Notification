@@ -12,16 +12,34 @@ self.addEventListener('activate', function(event) {
   console.log('Activated', event);
 });
 
-self.addEventListener('push', function(event) {
-  console.log('Push message', event);
+function getEndpoint() {
+  return self.registration.pushManager.getSubscription()
+  .then(function(subscription) {
+    if (subscription) {
+      return subscription.endpoint;
+    }
 
+    throw new Error('User not subscribed');
+  });
+}
+
+self.addEventListener('push', function(event) {
   var title = 'Push message';
 
   event.waitUntil(
-    self.registration.showNotification(title, {
-      'body': 'The Message',
-      'icon': 'images/icon.png'
-    }));
+    getEndpoint()
+    .then(function(endpoint) {
+      return fetch('./getPayload?endpoint=' + endpoint);
+    })
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(payload) {
+      self.registration.showNotification('ServiceWorker Cookbook', {
+        body: payload,
+      });
+    })
+    );
 });
 
 self.addEventListener('notificationclick', function(event) {
