@@ -30,7 +30,7 @@ self.addEventListener('push', function(event) {
     getEndpoint()
     .then(function(endpoint) {
       //return fetch('response.json');
-      return fetch("https://192.168.1.143:8443/AppServerPushSpring/user/getPayload");
+      return fetch("http://192.168.1.143:9000/AppServerPushSpring/user/getPayload");
     })
     .then(function(response) {
       return response.text();
