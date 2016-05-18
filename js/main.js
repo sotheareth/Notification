@@ -13,3 +13,11 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker error :^(', error);
   });
 }
+
+document.getElementById("register").addEventListener("click", function(event){
+	var endpoint = document.getElementById("result").innerHTML;
+	var subscriptionId = endpoint.substring(endpoint.lastIndexOf("/")+1);
+	document.getElementById("subscriptionId").innerHTML = subscriptionId;
+	var channelName = document.getElementById("subject").value;
+	window.open("https://192.168.1.143:8443/AppServerPushSpring/user/register?subscriptionId=" + subscriptionId + "&channelName=" + channelName);	
+});
