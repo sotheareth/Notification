@@ -43,7 +43,9 @@ self.addEventListener('push', function(event) {
       self.registration.showNotification('ServiceWorker Cookbook', {
         body: payload,
       });
-    })
+    }).catch(function(e){
+      console.log("error:", e);
+    });
     );
 });
 
