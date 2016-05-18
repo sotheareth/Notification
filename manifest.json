@@ -4,8 +4,7 @@
 	"short_name": "Notification4",
 	"icons": [
 		{
-		"src": "https://www.lifeon.com.kh/resources/css/common/images/logo_lifeon.png"
-		}
+		"src": "https://www.lifeon.com.kh/resources/css/common/images/logo_lifeon.png"}
 	],
 	"start_url": "/",
 	"display": "standalone",
