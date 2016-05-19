@@ -4,7 +4,6 @@ test
 
 Reference site:
 startup : https://developers.google.com/web/fundamentals/getting-started/push-notifications/?hl=en
-
           https://mobiforge.com/design-development/web-push-notifications
 
 firefox : https://serviceworke.rs/
