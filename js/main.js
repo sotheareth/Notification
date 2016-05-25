@@ -16,9 +16,12 @@ if ('serviceWorker' in navigator) {
     console.log('Service Worker error :^(', error);
   });
 }
-
+var rootUrl = "https://appserverpush-appserverpush.rhcloud.com/";
 document.getElementById("register").addEventListener("click", function(event){
 	var subscriptionId = document.getElementById("subscriptionId").value;
 	var channelName = document.getElementById("subject").value;
-	window.open("https://192.168.1.143:8443/AppServerPushSpring/user/register?subscriptionId=" + subscriptionId + "&channelName=" + channelName);	
+	var url = rootUrl + "user/register?subscriptionId=" + subscriptionId + "&channelName=" + channelName;
+	$.ajax({
+		"url"	 : url
+	});
 });
